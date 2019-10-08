@@ -1,0 +1,65 @@
+"Phrases"
+{
+	"Invalid team specified"
+	{
+		"en"			"Invalid team specified."
+	}
+	
+	"Moved to Terrorists"
+	{
+		"#format"		"{1:s}"
+		"en"			"Moved {1} to Terrorists"
+	}
+	
+	"Moved to Counter-Terrorists"
+	{
+		"#format"		"{1:s}"
+		"en"			"Moved {1} to Counter-Terrorists"
+	}
+	
+	"Moved to Spectators"
+	{
+		"#format"		"{1:s}"
+		"en"			"Moved {1} to Spectators"
+	}
+	
+	"Move player"
+	{
+		"en"			"Move player"
+	}
+	
+	"Move Terrorists"
+	{
+		"en"			"Terrorists"
+	}
+	
+	"Move Counter-Terrorists"
+	{
+		"en"			"Counter-Terrorists"
+	}
+	
+	"Move Spectators"
+	{
+		"en"			"Spectators"
+	}
+	
+	"Move player to"
+	{
+		"en"			"Move player to:"
+	}
+	
+	"Move player to Terrorists"
+	{
+		"en"			"Move player to Terrorists"
+	}
+	
+	"Move player to Counter-Terrorists"
+	{
+		"en"			"Move player to Counter-Terrorists"
+	}
+	
+	"Move player to Spectators"
+	{
+		"en"			"Move player to Spectators"
+	}
+}
