@@ -2,7 +2,7 @@
 {
 	"Invalid team specified"
 	{
-		"en"			"Invalid team specified."
+		"en"			"Invalid team specified. The valid teams are: t, ct or spec."
 	}
 	
 	"Moved to Terrorists"
