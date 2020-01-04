@@ -207,7 +207,7 @@ public Action Command_Move(int client, int args)
 {
 	if (args < 2)
 	{
-		ReplyToCommand(client, "Usage: sm_move <name|#userid> <t|ct|spec>");
+		ReplyToCommand(client, "[SM] Usage: sm_move <name|#userid> <t|ct|spec>");
 		return Plugin_Handled;
 	}
 	
@@ -240,7 +240,7 @@ public Action Command_Move(int client, int args)
 	
 	else
 	{
-		ReplyToCommand(client, "%t", "Invalid team specified");
+		ReplyToCommand(client, "[SM] %t", "Invalid team specified");
 		return Plugin_Handled;
 	}
 	
@@ -253,7 +253,7 @@ void PerformMoveToTerrorists(int client, int target)
 	GetClientName(target, name, sizeof(name));
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Terrorists", client, target);
-	ShowActivity(client, "%t", "Moved to Terrorists", name);
+	ShowActivity(client, "[SM] %t", "Moved to Terrorists", name);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -269,7 +269,7 @@ void PerformMoveToCounterTerrorists(int client, int target)
 	GetClientName(target, name, sizeof(name));
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Counter-Terrorists", client, target);
-	ShowActivity(client, "%t", "Moved to Counter-Terrorists", name);
+	ShowActivity(client, "[SM] %t", "Moved to Counter-Terrorists", name);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -285,7 +285,7 @@ void PerformMoveToSpectators(int client, int target)
 	GetClientName(target, name, sizeof(name));
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Spectators", client, target);
-	ShowActivity(client, "%t", "Moved to Spectators", name);
+	ShowActivity(client, "[SM] %t", "Moved to Spectators", name);
 
 	if (IsPlayerAlive(target))
 	{
