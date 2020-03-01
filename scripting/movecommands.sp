@@ -1,6 +1,7 @@
 #include <sourcemod>
 #include <sdktools>
 #include <cstrike>
+#include <colorlib_sample>
 #undef REQUIRE_PLUGIN
 #include <adminmenu>
 
@@ -16,7 +17,6 @@ public Plugin myinfo =
 };
 
 TopMenu g_TopMenu;
-
 int g_SelectedTeamInAdminMenu[MAXPLAYERS + 1];
 
 public void OnPluginStart()
@@ -253,7 +253,7 @@ void PerformMoveToTerrorists(int client, int target)
 	GetClientName(target, name, sizeof(name));
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Terrorists", client, target);
-	ShowActivity(client, "[SM] %t", "Moved to Terrorists", name);
+	CShowActivity(client, "[SM] %t", "Moved to Terrorists", name);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -269,7 +269,7 @@ void PerformMoveToCounterTerrorists(int client, int target)
 	GetClientName(target, name, sizeof(name));
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Counter-Terrorists", client, target);
-	ShowActivity(client, "[SM] %t", "Moved to Counter-Terrorists", name);
+	CShowActivity(client, "[SM] %t", "Moved to Counter-Terrorists", name);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -285,7 +285,7 @@ void PerformMoveToSpectators(int client, int target)
 	GetClientName(target, name, sizeof(name));
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Spectators", client, target);
-	ShowActivity(client, "[SM] %t", "Moved to Spectators", name);
+	CShowActivity(client, "[SM] %t", "Moved to Spectators", name);
 
 	if (IsPlayerAlive(target))
 	{
