@@ -1,32 +1,44 @@
-// Available chat colors:
-// 
-// {default}, {darkred}, {purple}, {green}, {lightgreen}, 
-// {lime}, {red}, {grey}, {yellow}, {orange}, {bluegrey},
-// {blue}, {darkblue}, {grey2}, {orchid}, {lightred}
-
 "Phrases"
 {
 	"Invalid team specified"
 	{
-		"en"			"{red}Invalid team specified. Type: T, CT or SPEC."
+		"en"			"Invalid team specified. Available teams: T, CT or SPEC."
 	}
 	
 	"Moved to Terrorists"
 	{
 		"#format"		"{1:s}"
-		"en"			"Moved {lime}{1}{default} to Terrorists"
+		"en"			"Moved {$team}{1}{$default} to Terrorists"
 	}
 	
 	"Moved to Counter-Terrorists"
 	{
 		"#format"		"{1:s}"
-		"en"			"Moved {lime}{1}{default} to Counter-Terrorists"
+		"en"			"Moved {$team}{1}{$default} to Counter-Terrorists"
 	}
 	
 	"Moved to Spectators"
 	{
 		"#format"		"{1:s}"
-		"en"			"Moved {lime}{1}{default} to Spectators"
+		"en"			"Moved {$team}{1}{$default} to Spectators"
+	}
+	
+	"Already at Terrorists"
+	{
+		"#format"		"{1:s}"
+		"en"			"{1} is already at Terrorists."
+	}
+	
+	"Already at Counter-Terrorists"
+	{
+		"#format"		"{1:s}"
+		"en"			"{1} is already at Counter-Terrorists."
+	}
+	
+	"Already at Spectators"
+	{
+		"#format"		"{1:s}"
+		"en"			"{1} is already at Spectators."
 	}
 	
 	"Move player"
