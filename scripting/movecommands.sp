@@ -1,7 +1,7 @@
 #include <sourcemod>
 #include <sdktools>
 #include <cstrike>
-#include <colorlib_sample>
+#include <sourcecolors>
 #undef REQUIRE_PLUGIN
 #include <adminmenu>
 
@@ -249,11 +249,17 @@ public Action Command_Move(int client, int args)
 
 void PerformMoveToTerrorists(int client, int target)
 {
-	char name[MAX_NAME_LENGTH];
-	GetClientName(target, name, sizeof(name));
+	char clientName[MAX_NAME_LENGTH];
+	GetClientName(target, clientName, sizeof(clientName));
+	
+	if (GetClientTeam(target) == CS_TEAM_T)
+	{
+		ReplyToCommand(client, "[SM] %t", "Already at Terrorists");
+		return;
+	}
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Terrorists", client, target);
-	CShowActivity(client, "[SM] %t", "Moved to Terrorists", name);
+	CShowActivity_Ex(client, 0, "\x04", "\x01%t", "Moved to Terrorists", clientName);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -265,11 +271,17 @@ void PerformMoveToTerrorists(int client, int target)
 
 void PerformMoveToCounterTerrorists(int client, int target)
 {
-	char name[MAX_NAME_LENGTH];
-	GetClientName(target, name, sizeof(name));
+	char clientName[MAX_NAME_LENGTH];
+	GetClientName(target, clientName, sizeof(clientName));
+	
+	if (GetClientTeam(target) == CS_TEAM_CT)
+	{
+		ReplyToCommand(client, "[SM] %t", "Already at Counter-Terrorists");
+		return;
+	}
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Counter-Terrorists", client, target);
-	CShowActivity(client, "[SM] %t", "Moved to Counter-Terrorists", name);
+	CShowActivity_Ex(client, 0, "\x04", "\x01%t", "Moved to Counter-Terrorists", clientName);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -280,13 +292,19 @@ void PerformMoveToCounterTerrorists(int client, int target)
 }
 
 void PerformMoveToSpectators(int client, int target)
-{
-	char name[MAX_NAME_LENGTH];
-	GetClientName(target, name, sizeof(name));
+{	
+	char clientName[MAX_NAME_LENGTH];
+	GetClientName(target, clientName, sizeof(clientName));
 	
-	LogAction(client, target, "\"%L\" moved \"%L\" to Spectators", client, target);
-	CShowActivity(client, "[SM] %t", "Moved to Spectators", name);
+	if (GetClientTeam(target) == CS_TEAM_T)
+	{
+		ReplyToCommand(client, "[SM] %t", "Already at Spectators");
+		return;
+	}
 
+	LogAction(client, target, "\"%L\" moved \"%L\" to Spectators", client, target);
+	CShowActivity_Ex(client, 0, "\x04", "\x01%t", "Moved to Spectators", clientName);
+	
 	if (IsPlayerAlive(target))
 	{
 		ForcePlayerSuicide(target);
