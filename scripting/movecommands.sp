@@ -254,12 +254,12 @@ void PerformMoveToTerrorists(int client, int target)
 	
 	if (GetClientTeam(target) == CS_TEAM_T)
 	{
-		ReplyToCommand(client, "[SM] %t", "Already at Terrorists");
+		ReplyToCommand(client, "[SM] %t", "Already at Terrorists", clientName);
 		return;
 	}
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Terrorists", client, target);
-	CShowActivity_Ex(client, 0, "\x04", "\x01%t", "Moved to Terrorists", clientName);
+	CShowActivity_Ex(client, 0, "[SM] \x04", "\x01%t", "Moved to Terrorists", clientName);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -276,12 +276,12 @@ void PerformMoveToCounterTerrorists(int client, int target)
 	
 	if (GetClientTeam(target) == CS_TEAM_CT)
 	{
-		ReplyToCommand(client, "[SM] %t", "Already at Counter-Terrorists");
+		ReplyToCommand(client, "[SM] %t", "Already at Counter-Terrorists", clientName);
 		return;
 	}
 	
 	LogAction(client, target, "\"%L\" moved \"%L\" to Counter-Terrorists", client, target);
-	CShowActivity_Ex(client, 0, "\x04", "\x01%t", "Moved to Counter-Terrorists", clientName);
+	CShowActivity_Ex(client, 0, "[SM] \x04", "\x01%t", "Moved to Counter-Terrorists", clientName);
 	
 	if (IsPlayerAlive(target))
 	{
@@ -298,12 +298,12 @@ void PerformMoveToSpectators(int client, int target)
 	
 	if (GetClientTeam(target) == CS_TEAM_T)
 	{
-		ReplyToCommand(client, "[SM] %t", "Already at Spectators");
+		ReplyToCommand(client, "[SM] %t", "Already at Spectators", clientName);
 		return;
 	}
 
 	LogAction(client, target, "\"%L\" moved \"%L\" to Spectators", client, target);
-	CShowActivity_Ex(client, 0, "\x04", "\x01%t", "Moved to Spectators", clientName);
+	CShowActivity_Ex(client, 0, "[SM] \x04", "\x01%t", "Moved to Spectators", clientName);
 	
 	if (IsPlayerAlive(target))
 	{
