@@ -296,7 +296,7 @@ void PerformMoveToSpectators(int client, int target)
 	char clientName[MAX_NAME_LENGTH];
 	GetClientName(target, clientName, sizeof(clientName));
 	
-	if (GetClientTeam(target) == CS_TEAM_T)
+	if (GetClientTeam(target) == CS_TEAM_SPECTATOR)
 	{
 		ReplyToCommand(client, "[SM] %t", "Already at Spectators", clientName);
 		return;
